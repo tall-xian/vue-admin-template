@@ -92,8 +92,8 @@ export default defineConfig(({command, mode}) => {
           drop_console: true,
           drop_debugger: true,
         },
-        outDir: 'dist', // 指定输出路径
-        assetsDir: 'assets', // 指定生成静态文件目录
+        // outDir: 'dist', // 指定输出路径
+        // assetsDir: 'assets', // 指定生成静态文件目录
       },
       rollupOptions: {
         output: {
