@@ -7,16 +7,17 @@
 
 <script setup lang="ts">
 import {onMounted} from 'vue';
-// import {storeToRefs} from 'pinia';
+import {storeToRefs} from 'pinia';
 import {useRoute} from 'vue-router';
+import {commonStore} from '@/stores/common.ts';
 // import {appName} from '@/config/app';
 // import {useAppStore} from '@/stores/app';
 import {menus} from '@/router/menu';
 // import RouteMenu from './components/RouteMenu.vue';
 
 const route = useRoute();
-// const appStore = useAppStore();
-// const {asideCollapse} = storeToRefs(appStore);
+const appStore = commonStore();
+const {isCollapse} = storeToRefs(appStore);
 
 onMounted(() => {
   console.log(menus, '=====menus');
@@ -26,14 +27,22 @@ onMounted(() => {
 <template>
   <div class="aside">
     <div class="logo">
-      <img src="@/assets/logo.svg" alt=""/>
+      <img style="width: 30px" src="@/assets/logo.svg" alt="" v-if="isCollapse">
+      <span v-else>
+        <img style="width: 20px;margin-right: 6px;position: relative;top: 3px" src="@/assets/logo.svg"
+             alt="">{{ 'admin' }}
+      </span>
     </div>
-    <el-menu class="menu">
-      <el-menu-item v-for="(item, index) in menus " :key="index" :index="index">
+    <el-menu class="menu" :collapse="isCollapse"
+             router
+             :collapse-transition="true"
+             :default-active="route.path">
+      <el-menu-item v-for="(item, index) in menus " :key="index">
+        <el-icon>
+          <component :is="item.meta?.icon"/>
+        </el-icon>
         <template #title>
-          <el-icon>
-            <component :is="item.meta?.icon"/>
-          </el-icon>
+
           <span>{{ item.meta?.title }}</span>
         </template>
       </el-menu-item>

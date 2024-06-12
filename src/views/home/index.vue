@@ -10,9 +10,27 @@
 </script>
 
 <template>
-  <h1>首页</h1>
+  <div class="box-scroll">
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+    <h1>首页</h1>
+  </div>
+
 </template>
 
 <style scoped lang="scss">
+.box-scroll {
+  height: 100%;
+}
 
 </style>

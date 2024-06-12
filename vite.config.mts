@@ -78,7 +78,7 @@ export default defineConfig(({ command, mode }) => {
       postcss: {
         plugins: [
           pxtorem({
-            rootValue: 100, // 基准值，根据实际情况调整
+            rootValue: 10, // 基准值，根据实际情况调整
             propList: ["*"], // 需要转换
             minPixelValue: 2,
           }),

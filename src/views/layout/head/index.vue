@@ -6,26 +6,35 @@
 */
 
 <script setup lang="ts">
-
+import {storeToRefs} from 'pinia';
 import {Expand} from '@element-plus/icons-vue';
+import {commonStore} from '@/stores/common.ts';
+
+const common = commonStore();
+const {isCollapse} = storeToRefs(common);
+
+
+const loginOut = () => {
+
+};
 </script>
 
 <template>
   <div class="header">
     <div class="header-left">
-      <el-button link @click="appStore.toggleAside()">
-        <el-icon :size="22" :class="asideCollapse ? '' : 'aside-collapse'">
+      <el-button link @click="common.toggleCollapse()">
+        <el-icon :size="36" :class="isCollapse ? '' : 'aside-collapse'">
           <expand/>
         </el-icon>
       </el-button>
-      <Breadcrumb v-if="!isMobile"/>
+      <!--      <Breadcrumb v-if="!isMobile"/>-->
     </div>
     <div class="header-right">
-      <Fullscreen/>
-      <ThemeSwitch @toggleDarkMode="appStore.toggleDarkMode()"/>
+      <!--      <Fullscreen/>-->
+      <!--      <ThemeSwitch @toggleDarkMode="appStore.toggleDarkMode()"/>-->
       <el-dropdown>
           <span class="el-dropdown-link">
-            {{ userName }}
+            {{ 'admin' }}
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
         <template #dropdown>

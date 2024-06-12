@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="font-size: 12px;">
 
 <head>
     <meta charset="UTF-8"/>
@@ -13,14 +13,19 @@
 <script type="module" src="/src/main.ts"></script>
 </body>
 <script>
-   // const root = document.documentElement;
+   const root = document.documentElement;
    // console.log(window.innerWidth, '====window.innerWidth');
-   // root.style.fontSize = `${window.innerWidth / 100}px`;
-   let width = document.body.clientWidth;
-   console.log(width, '====width');
-   let widthNum = parseInt((width / 1920) * 100) + 10;
-   console.log(widthNum, '===widthNum');
-   document.documentElement.style.fontSize = `${widthNum}` + 'px';
+   // root.style.fontSize = `${parseInt(document.body.clientWidth / 25)}px`;
+   // let width = document.body.clientWidth;
+   // console.log(width, '====width');
+   // let widthNum = parseInt((width / 1920) * 100);
+   // console.log(widthNum, '===widthNum');
+   // document.documentElement.style.fontSize = `${widthNum}` + 'px';
 </script>
 
 </html>
+<style>
+    html {
+
+    }
+</style>
