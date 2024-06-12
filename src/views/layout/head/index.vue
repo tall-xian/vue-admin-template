@@ -1,24 +1,13 @@
+/**
+* @file:  src/views/layout/head/index
+* @description: 导航栏
+* @date: 2024-06-12
+* @author: wanggaoxian
+*/
+
 <script setup lang="ts">
-import {storeToRefs} from 'pinia';
-import {useAppStore} from '@/store/app';
-import {useUserStore} from '@/store/user';
-import {useMediaQuery} from '@vueuse/core';
-import Breadcrumb from './components/Breadcrumb.vue';
-import Fullscreen from './components/Fullscreen.vue';
-import ThemeSwitch from './components/themeSwitch/Index.vue';
-//===========
-const appStore = useAppStore();
-const {asideCollapse} = storeToRefs(appStore);
-//==========
-const userStore = useUserStore();
-const {userName} = storeToRefs(userStore);
 
-const isMobile = useMediaQuery(`(max-width: 750px)`);
-
-
-const loginOut = () => {
-  userStore.loginOut();
-};
+import {Expand} from '@element-plus/icons-vue';
 </script>
 
 <template>
@@ -48,12 +37,13 @@ const loginOut = () => {
       </el-dropdown>
     </div>
   </div>
+
 </template>
 
 <style scoped lang="scss">
 .header {
   width: 100%;
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,4 +70,5 @@ const loginOut = () => {
     }
   }
 }
+
 </style>

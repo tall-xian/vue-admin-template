@@ -1,12 +1,11 @@
 import {Common} from './modules/common';
-import {Dashboard} from './modules/dashboard';
-import {System} from './modules/sysyem';
+// import {Dashboard} from './modules/dashboard';
+import {HomeRouter} from './modules/home';
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 
 //这里可以根据权限做动态路由
 const menuRoute: RouteRecordRaw[] = [
-  Dashboard,
-  System,
+  HomeRouter,
 ];
 
 

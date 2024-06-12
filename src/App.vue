@@ -1,8 +1,12 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
-  <router-view></router-view>
+<!--  <el-watermark :font="font" content="王高贤">-->
+    <router-view></router-view>
+<!--  </el-watermark>-->
+
 </template>
 
 <style>
