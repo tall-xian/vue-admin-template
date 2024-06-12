@@ -1,49 +1,48 @@
 <script setup lang="ts">
-import {ref} from "vue";
-import {storeToRefs} from "pinia";
-import {useRouter, useRoute,RouteRecordRaw} from 'vue-router'
-import {useAppStore} from "@/stores/app";
-import TabsChromeX from "@/components/tabsChrome/TabsChromeX.vue"
-import {Tab} from "@/components/tabsChrome/tab";
+import {ref} from 'vue';
+import {storeToRefs} from 'pinia';
+import {useRouter, useRoute, RouteRecordRaw} from 'vue-router';
+import {useAppStore} from '@/store/app';
+import TabsChromeX from '@/components/tabsChrome/TabsChromeX.vue';
+import {Tab} from '@/components/tabsChrome/tab';
 import {
-  CloseBold
-} from '@element-plus/icons-vue'
+  CloseBold,
+} from '@element-plus/icons-vue';
 
-const route = useRoute()
-const router = useRouter()
-const activePath = ref(route.path)
-const appStore = useAppStore()
-const {tabsChrome} = storeToRefs(appStore)
-
+const route = useRoute();
+const router = useRouter();
+const activePath = ref(route.path);
+const appStore = useAppStore();
+const {tabsChrome} = storeToRefs(appStore);
 
 
 router.afterEach((to) => {//当前路由不执行
-  activePath.value = to.path
-  pushThisRoute(to.path,to.meta.title as string)
-})
+  activePath.value = to.path;
+  pushThisRoute(to.path, to.meta.title as string);
+});
 
 
-const pushThisRoute = (path: string, title: string):void => {
-  let tab: Tab = {path, title,closable:true}
-  appStore.pushTabsChrome(tab)
-}
+const pushThisRoute = (path: string, title: string): void => {
+  let tab: Tab = {path, title, closable: true};
+  appStore.pushTabsChrome(tab);
+};
 //刷新时当前的页面
-pushThisRoute(route.path,route.meta.title as string)
+pushThisRoute(route.path, route.meta.title as string);
 
-const clickTab = (t:Tab) => {
-  router.push(t.path)
-}
-const removeTab = (t:Tab) => {
-  let r = appStore.removeTabChrome(t)
-  if(r){
-    router.push(r.path)
+const clickTab = (t: Tab) => {
+  router.push(t.path);
+};
+const removeTab = (t: Tab) => {
+  let r = appStore.removeTabChrome(t);
+  if (r) {
+    router.push(r.path);
   }
-}
+};
 
 const removeAllTab = () => {
-  router.push("/")
-  appStore.removeAllTab()
-}
+  router.push('/');
+  appStore.removeAllTab();
+};
 
 </script>
 <template>
@@ -61,7 +60,9 @@ const removeAllTab = () => {
     <div class="nav-action">
       <el-dropdown>
         <div class="more-btn">
-          <el-icon><MoreFilled /></el-icon>
+          <el-icon>
+            <MoreFilled/>
+          </el-icon>
         </div>
         <template #dropdown>
           <el-dropdown-menu>
@@ -79,6 +80,7 @@ const removeAllTab = () => {
   display: flex;
   align-items: center;
   background-color: #ebeef4;
+
   .tabs-chrome {
     flex: 1;
     overflow-x: auto;
@@ -99,18 +101,21 @@ const removeAllTab = () => {
     }
 
   }
+
   .nav-action {
     width: 40px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .more-btn{
+
+    .more-btn {
       cursor: pointer;
     }
   }
+
   @at-root .dark {
-    .nav-tab{
+    .nav-tab {
       background-color: #000;
     }
 

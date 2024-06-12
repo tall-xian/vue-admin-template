@@ -1,23 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
-  <el-config-provider>
-    <RouterView />
-  </el-config-provider>
+  <router-view></router-view>
 </template>
 
-<style scoped lang="scss">
-.logo {
-  width: 200px;
-  // height: 6em;
-  // padding: 1.5em;
-  // will-change: filter;
-  // transition: filter 300ms;
+<style>
+* {
+  box-sizing: border-box;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+body {
+  padding: 0;
+  margin: 0;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 </style>

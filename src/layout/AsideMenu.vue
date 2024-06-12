@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import {storeToRefs} from "pinia";
-import {useRoute} from 'vue-router'
-import {appName} from "@/config/app"
-import {useAppStore} from "@/stores/app";
-import {menus} from "@/router/menu.ts"
-import RouteMenu from "./components/RouteMenu.vue";
+import {storeToRefs} from 'pinia';
+import {useRoute} from 'vue-router';
+import {appName} from '@/config/app';
+import {useAppStore} from '@/store/app';
+import {menus} from '@/router/menu.ts';
+import RouteMenu from './components/RouteMenu.vue';
 
-const route = useRoute()
-const appStore = useAppStore()
-const {asideCollapse} = storeToRefs(appStore)
+const route = useRoute();
+const appStore = useAppStore();
+const {asideCollapse} = storeToRefs(appStore);
 </script>
 
 <template>
@@ -40,18 +40,18 @@ const {asideCollapse} = storeToRefs(appStore)
 
   .logo {
     width: 100%;
-    height: 60px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-      width: 40px;
+      width: 20px;
     }
   }
 
   .menu {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 40px);
     overflow-y: auto;
     border-right: none;
   }

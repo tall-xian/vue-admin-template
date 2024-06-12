@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {RouteRecordRaw} from "vue-router";
+import {RouteRecordRaw} from 'vue-router';
 
 defineProps<{
   menu: RouteRecordRaw
-  path:string
-}>()
+  path: string
+}>();
 </script>
 
 <template>
@@ -13,20 +13,24 @@ defineProps<{
       :index="path">
     <template #title>
       <el-icon v-if="menu.meta && menu.meta.icon">
-        <component  :is="menu.meta.icon"/>
+        <component :is="menu.meta.icon"/>
       </el-icon>
-      <span>{{  menu.meta.title }}</span>
+      <span>{{ menu.meta.title }}</span>
     </template>
     <RouteMenu v-for="m in menu.children" :menu="m" :key="m.path" :path="path +'/' + m.path"/>
   </el-sub-menu>
   <el-menu-item v-else :index="menu.redirect ? menu.redirect :path">
     <el-icon v-if="menu.meta && menu.meta.icon">
-      <component  :is="menu.meta.icon"/>
+      <component :is="menu.meta.icon"/>
     </el-icon>
     <span>{{ menu.meta.title }}</span>
   </el-menu-item>
 </template>
 
 <style scoped>
+
+el-menu-item {
+  height: 40px;
+}
 
 </style>
