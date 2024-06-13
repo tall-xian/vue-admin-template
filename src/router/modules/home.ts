@@ -8,13 +8,13 @@
 import {RouteRecordRaw} from 'vue-router';
 
 export const HomeRouter: RouteRecordRaw = {
-  path: '/home',
+  path: '/',
   component: () => import('@/views/layout/index.vue'),
   redirect: '/home',
   meta: {icon: 'Guide', title: '仪表盘', alwaysShow: true},
   children: [
     {
-      path: '/home',
+      path: 'home',
       component: () => import('@/views/home/index.vue'),
       meta: {icon: 'Guide', title: '首页', hideMenu: true},
     },
