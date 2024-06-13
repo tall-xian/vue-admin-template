@@ -9,14 +9,43 @@ const menuRoute: RouteRecordRaw[] = [
 ];
 
 
-const whiteList: string[] = ['/login'];//不需要登录也能查看的路由,最少需要'/login'，要不然会一直重定向到login
+const whiteList: string[] = ['/login','/home/index'];//不需要登录也能查看的路由,最少需要'/login'，要不然会一直重定向到login
+//
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: [...menuRoute, ...Common],
+// });
+export {menuRoute, whiteList};
+// export default router;
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [...menuRoute, ...Common],
 });
-export {menuRoute, whiteList};
+
+router.beforeEach((to, _from, next) => {
+  console.log([...menuRoute, ...Common], '====[...menuRoute, ...Common]');
+  // const whiteList = ['/login'];
+  // const loginStore = isLoginStore();
+  // console.log(loginStore.isToken, '=====loginStore');
+  // if (whiteList.includes(to.path)) {
+  //   next();
+  // } else {
+  //   const isLogin = window.localStorage.getItem('token'); //|| loginStore.isToken;
+  //   if (!isLogin) {
+  //     return next({
+  //       path: '/login',
+  //       query: {redirect: to.fullPath},
+  //     });
+  //   }
+  //   next();
+  // }
+  next()
+});
+
 export default router;
+
+
 
 
 

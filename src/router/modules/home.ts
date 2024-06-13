@@ -18,5 +18,10 @@ export const HomeRouter: RouteRecordRaw = {
       component: () => import('@/views/home/index.vue'),
       meta: {icon: 'Guide', title: '首页', hideMenu: true},
     },
+    {
+      path: 'system',
+      component: () => import('@/views/system/index.vue'),
+      meta: {icon: 'Guide', title: '首页', hideMenu: true},
+    },
   ],
 };
