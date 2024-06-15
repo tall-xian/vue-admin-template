@@ -3,7 +3,7 @@ import {RouteRecordRaw} from 'vue-router';
 export const Common: RouteRecordRaw[] = [
   {
     path: '/login',
-    component: () => import('@/views/common/Login.vue'),
+    component: () => import('@/views/common/login.vue'),
     meta: {title: '登录', hideTabs: true},
   },
   // {
