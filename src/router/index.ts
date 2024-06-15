@@ -87,7 +87,7 @@ const routes = [
         component: () => import('@/views/common/login.vue'),
         meta: {title: '登录', icon: 'Guide',}
     }, {
-        path: 'system',
+        path: '/system',
         name: 'system',
         component: () => import('@/views/system/index.vue'),
         meta: {title: '登录', icon: 'Guide',}
