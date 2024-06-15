@@ -44,25 +44,25 @@ const router = createRouter({
     routes: [...menuRoute, ...Common],
 });
 
-router.beforeEach((to, _from, next) => {
-    console.log([...menuRoute, ...Common], '====[...menuRoute, ...Common]');
-    // const whiteList = ['/login'];
-    // const loginStore = isLoginStore();
-    // console.log(loginStore.isToken, '=====loginStore');
-    // if (whiteList.includes(to.path)) {
-    //   next();
-    // } else {
-    //   const isLogin = window.localStorage.getItem('token'); //|| loginStore.isToken;
-    //   if (!isLogin) {
-    //     return next({
-    //       path: '/login',
-    //       query: {redirect: to.fullPath},
-    //     });
-    //   }
-    //   next();
-    // }
-    next()
-});
+// router.beforeEach((to, _from, next) => {
+//     console.log([...menuRoute, ...Common], '====[...menuRoute, ...Common]');
+//     // const whiteList = ['/login'];
+//     // const loginStore = isLoginStore();
+//     // console.log(loginStore.isToken, '=====loginStore');
+//     // if (whiteList.includes(to.path)) {
+//     //   next();
+//     // } else {
+//     //   const isLogin = window.localStorage.getItem('token'); //|| loginStore.isToken;
+//     //   if (!isLogin) {
+//     //     return next({
+//     //       path: '/login',
+//     //       query: {redirect: to.fullPath},
+//     //     });
+//     //   }
+//     //   next();
+//     // }
+//     next()
+// });
 
 export default router;
 
