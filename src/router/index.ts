@@ -41,7 +41,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 // ;
 
 
-const whiteList: string[] = ['/login'];//不需要登录也能查看的路由,最少需要'/login'，要不然会一直重定向到login
+// const whiteList: string[] = ['/login'];//不需要登录也能查看的路由,最少需要'/login'，要不然会一直重定向到login
 //
 // const router = createRouter({
 //   history: createWebHistory(),
@@ -99,7 +99,7 @@ const router = createRouter({
     routes: menuRoute,
 })
 
-// export {menuRoute, whiteList};
+// export {menuRoute, };
 export default router;
 
 
