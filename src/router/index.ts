@@ -1,4 +1,3 @@
-import {Common} from './modules/common';
 // import {Dashboard} from './modules/dashboard';
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
 
@@ -10,23 +9,33 @@ const menuRoute: RouteRecordRaw[] = [
         meta: {title: '登录', hideTabs: true},
     },
     {
-        path: '/',
-        component: () => import('@/views/layout/index.vue'),
-        redirect: '/home',
+        path: '/home',
+        component: () => import('@/views/home/index.vue'),
         meta: {icon: 'Guide', title: '仪表盘', alwaysShow: true},
-        children: [
-            {
-                path: 'home',
-                component: () => import('@/views/home/index.vue'),
-                meta: {icon: 'Guide', title: '首页', hideMenu: true},
-            },
-            {
-                path: 'system',
-                component: () => import('@/views/system/index.vue'),
-                meta: {icon: 'Guide', title: '首页', hideMenu: true},
-            },
-        ]
-    }
+    },
+    {
+        path: '/system',
+        component: () => import('@/views/system/index.vue'),
+        meta: {icon: 'Guide', title: '仪表盘', alwaysShow: true},
+    },
+    // {
+    //     path: '/',
+    //     component: () => import('@/views/layout/index.vue'),
+    //     redirect: '/home',
+    //     meta: {icon: 'Guide', title: '仪表盘', alwaysShow: true},
+    //     children: [
+    //         {
+    //             path: 'home',
+    //             component: () => import('@/views/home/index.vue'),
+    //             meta: {icon: 'Guide', title: '首页', hideMenu: true},
+    //         },
+    //         {
+    //             path: 'system',
+    //             component: () => import('@/views/system/index.vue'),
+    //             meta: {icon: 'Guide', title: '首页', hideMenu: true},
+    //         },
+    //     ]
+    // }
 ];
 
 
@@ -41,7 +50,7 @@ export {menuRoute, whiteList};
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [...menuRoute, ...Common],
+    routes: [...menuRoute],
 });
 
 // router.beforeEach((to, _from, next) => {
