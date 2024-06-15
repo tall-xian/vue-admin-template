@@ -99,7 +99,7 @@ const router = createRouter({
     routes: menuRoute,
 })
 
-export {menuRoute, whiteList};
+// export {menuRoute, whiteList};
 export default router;
 
 
