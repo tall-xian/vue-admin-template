@@ -75,7 +75,9 @@ import {createRouter, createWebHistory} from 'vue-router';
 //     next()
 // });
 
-const menuRoute = [
+const menuRoute: any = []
+
+const routes = [
     {
         path: '/',
         name: 'home',
@@ -96,10 +98,10 @@ const menuRoute = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: menuRoute,
+    routes: routes,
 })
 
-// export {menuRoute, };
+export {menuRoute};
 export default router;
 
 
